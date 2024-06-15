@@ -37,7 +37,6 @@ function Form() {
   const [emoji, setEmoji] = useState("");
   const { createCity, isLoading } = useCities();
   const street = useRecoilValue(streetAtom);
-
   const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
   useEffect(() => {
@@ -105,7 +104,7 @@ function Form() {
           style={{ color: "black" }}
           onChange={(e) => setCityName(e.target.value)}
           // disabled
-          value={street}
+          value={street === "" ? "Loading..." : street}
         />
       </div>
 

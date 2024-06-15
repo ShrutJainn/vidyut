@@ -1,7 +1,7 @@
 .btn {
   color: inherit;
   text-transform: uppercase;
-  /* padding: 0.8rem 1.6rem; */
+  padding: 0.4rem 0.8rem;
   font-family: inherit;
   font-size: 1rem;
   border: none;
@@ -11,7 +11,7 @@
 }
 
 .primary {
-  font-weight: 700;
+  font-weight: 500;
   background-color: var(--color-brand--2);
   color: var(--color-dark--1);
 }
@@ -23,11 +23,11 @@
 }
 
 .position {
-  font-weight: 700;
+  font-weight: 500;
   position: absolute;
   z-index: 1000;
-  font-size: 1.4rem;
-  bottom: 4rem;
+  font-size: 1rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--color-brand--2);

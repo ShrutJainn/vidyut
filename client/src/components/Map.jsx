@@ -37,7 +37,7 @@ function Map() {
   }, [geolocationPosition]);
   return (
     <div className={styles.mapContainer}>
-      {!geolocationPosition && (
+      {geolocationPosition && (
         <Button type="position" onClick={getPosition}>
           {isLoadingPosition ? "Loading..." : "Use your position"}
         </Button>
@@ -86,7 +86,6 @@ function DetectClick() {
 
   useMapEvents({
     click: async (e) => {
-      console.log(e);
       navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
       const response = await fetch(
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${e.latlng.lat}&lon=${e.latlng.lng}`

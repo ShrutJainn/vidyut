@@ -3,6 +3,9 @@ import express from "express";
 import { connectDB } from "./db.js";
 import userRouter from "./routes/userRouter.js";
 const app = express();
+import cors from "cors";
+
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT;
