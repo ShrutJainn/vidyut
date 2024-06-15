@@ -6,11 +6,12 @@ import neem from "./media/tree-images/neem.avif";
 import sandalwood from "./media/tree-images/sandalwood.jpeg";
 import rubber from "./media/tree-images/rubber.avif";
 import teak from "./media/tree-images/teak.jpg";
-import user from "./media/tree-images/user.jpg";
-import help from "./media/tree-images/help.png";
-import home from "./media/tree-images/home.png";
+import { useRecoilState } from "recoil";
+import cartAtom from "../atoms/cartAtom";
+import { useEffect } from "react";
 
 function Donate() {
+  const [cart, setCart] = useRecoilState(cartAtom);
   const trees = [
     {
       name: "Banyan Tree",
@@ -56,6 +57,11 @@ function Donate() {
     },
   ];
 
+  function handleAddItem(tree) {
+    setCart((prev) => [...prev, tree]);
+    console.log(cart);
+  }
+
   return (
     <>
       <div className={styles.navbar}>
@@ -78,7 +84,10 @@ function Donate() {
                     <p className={styles.treeDescription}>{tree.description}</p>
                   </div>
                   <div className={styles.buttons}>
-                    <button className={styles.addCartBtn}>
+                    <button
+                      onClick={() => handleAddItem(tree)}
+                      className={styles.addCartBtn}
+                    >
                       Add To Cart{" "}
                       <img
                         src={atc}
@@ -99,7 +108,7 @@ function Donate() {
       <div className={styles.footer}>
         <p>© 2024 Think Global, Plant Local. All rights reserved.</p>
       </div>
-      <button className={styles.imgUser}>
+      {/* <button className={styles.imgUser}>
         {" "}
         <img src={user} />{" "}
       </button>
@@ -110,7 +119,7 @@ function Donate() {
       <button className={styles.imgUser3}>
         {" "}
         <img src={home} />{" "}
-      </button>
+      </button> */}
     </>
   );
 }

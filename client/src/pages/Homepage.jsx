@@ -1,6 +1,6 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Homepage.module.css";
 import video from "./media/video.mp4";
 import image from "./media/map.jpg";
@@ -11,47 +11,39 @@ import sup1 from "./media/sup1.jpg";
 import sup2 from "./media/sup2.jpg";
 import sup3 from "./media/sup3.jpg";
 import sup4 from "./media/sup4.jpg";
-import { useEffect } from "react";
 
 function Homepage() {
-  useEffect(() => {
-    localStorage.setItem("flag", false);
-  }, []);
-  gsap.registerPlugin(useGSAP);
-
-  setTimeout(() => {
-    localStorage.setItem("flag", true);
-  }, 5000);
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
 
   useGSAP(() => {
     gsap.to(".loader", {
       top: "-100%",
-      delay: "2",
+      delay: ".5",
     });
   });
   return (
     <>
-      {/* {localStorage.getItem("flag") === false && (
-        <div
-          className={`loader ${styles.loader}`}
-          style={{
-            height: "100%",
-            width: "100%",
-            backgroundColor: "#000",
-            position: "fixed",
-            zIndex: "999",
-            top: "0",
-            transition: "all ease 0.7s",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "4",
-            color: "white",
-          }}
-        >
-          <img src={logo} style={{ height: "20rem" }} />
-        </div>
-      )} */}
+      <div
+        className={`loader ${styles.loader}`}
+        style={{
+          height: "100%",
+          width: "100%",
+          backgroundColor: "#000",
+          position: "fixed",
+          zIndex: "999",
+          top: "0",
+          transition: "all ease 0.7s",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "4",
+          color: "white",
+        }}
+      >
+        <img src={logo} style={{ height: "20rem" }} />
+      </div>
       <div className={styles.main}>
         <div id={styles.page1}>
           <video autoPlay loop muted>
@@ -61,7 +53,12 @@ function Homepage() {
             <nav>
               {/* <h3 className="navbar">Vidyut</h3> */}
               <img src={logo} alt="vidyut logo" />
-              <h3 style={{ color: "white" }}>Menu</h3>
+              <h3
+                onClick={() => navigate("/login")}
+                style={{ color: "white", cursor: "pointer" }}
+              >
+                {user ? "Menu" : "Login"}
+              </h3>
             </nav>
             <div className={styles.heading}>
               <h1>Power in every STEP</h1>
