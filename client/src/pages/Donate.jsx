@@ -8,10 +8,11 @@ import rubber from "./media/tree-images/rubber.avif";
 import teak from "./media/tree-images/teak.jpg";
 import { useRecoilState } from "recoil";
 import cartAtom from "../atoms/cartAtom";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Donate() {
   const [cart, setCart] = useRecoilState(cartAtom);
+  const navigate = useNavigate();
   const trees = [
     {
       name: "Banyan Tree",
@@ -59,7 +60,6 @@ function Donate() {
 
   function handleAddItem(tree) {
     setCart((prev) => [...prev, tree]);
-    console.log(cart);
   }
 
   return (
@@ -101,7 +101,12 @@ function Donate() {
               );
             })}
           </div>
-          <button className={styles.paymentBtn}>Proceed To Payment</button>
+          <button
+            onClick={() => navigate("/cart")}
+            className={styles.paymentBtn}
+          >
+            Proceed To Payment ({cart.length} Items){" "}
+          </button>
         </div>
       </div>
       n

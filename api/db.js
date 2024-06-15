@@ -35,6 +35,13 @@ const userSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
+  cart: [
+    {
+      name: String,
+      description: String,
+      image: String,
+    },
+  ],
 });
 
 export const User = mongoose.model("User", userSchema);

@@ -2,13 +2,16 @@ import toast from "react-hot-toast";
 import { useGeolocation } from "../hooks/useGeolocation";
 import styles from "./AirQuality.module.css";
 import scale from "./media/image/table.jpg";
-import axios from "axios";
+import { useState } from "react";
+import ModalAirQuality from "../components/ModalAirQuality";
 
 function AirQuality() {
   const { position: geolocationPosition, getPosition } = useGeolocation();
-  console.log(import.meta.env.VITE_WHETHER_KEY);
+  const [isOpenModel, setIsOpenModal] = useState(false);
+  const [airData, setAirData] = useState(null);
 
   async function handleFetchAirStatus() {
+    console.log(geolocationPosition);
     if (!geolocationPosition)
       return toast.error("We need to first fetch your location");
 
@@ -24,8 +27,10 @@ function AirQuality() {
         import.meta.env.VITE_WHETHER_KEY
       }`
     );
-    const data = await response.json();
-    console.log(data);
+    const { list } = await response.json();
+    setAirData(list[0]);
+    console.log(airData);
+    setIsOpenModal(true);
   }
 
   return (
@@ -41,7 +46,7 @@ function AirQuality() {
           </span>
           <br />
           <div className={styles.btn}>
-            <button
+            {/* <button
               onClick={() => {
                 getPosition();
                 console.log(geolocationPosition);
@@ -49,10 +54,16 @@ function AirQuality() {
               className={styles.btn1}
             >
               Fetch Location
-            </button>
+            </button> */}
             <button onClick={handleFetchAirStatus} className={styles.btn2}>
-              Air Status
+              Get Air Status
             </button>
+            {isOpenModel && (
+              <ModalAirQuality
+                setIsOpenModal={setIsOpenModal}
+                airData={airData}
+              />
+            )}
           </div>
           <img src={scale} className={styles.img} />
         </div>

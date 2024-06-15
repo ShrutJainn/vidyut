@@ -4,10 +4,10 @@ import bcrypt from "bcryptjs";
 import { User } from "../db.js";
 import zod from "zod";
 import { protectedRoute } from "../middlewares/protectedRoute.js";
+import twilio from "twilio";
 const userRouter = express.Router();
 
 const jwtSecret = process.env.JWT_SECRET;
-
 
 const signupSchema = zod.object({
   username: zod.string(),
@@ -18,6 +18,21 @@ const signupSchema = zod.object({
 const loginSchema = zod.object({
   username: zod.string(),
   password: zod.string(),
+});
+
+userRouter.post("/send-sms", (req, res) => {
+  const accountSid = process.env.TWILIO_SID;
+  const authToken = process.env.TWILIO_AUTHTOKEN;
+  const client = twilio(accountSid, authToken);
+
+  client.messages
+    .create({
+      body: "Thank you for contributing to nature and vidyut",
+      from: "+17752588071",
+      to: "+917415935284",
+    })
+    .then((message) => console.log(message.sid))
+    .catch((err) => console.log(err));
 });
 
 userRouter.get("/", protectedRoute, async (req, res) => {
@@ -87,6 +102,26 @@ userRouter.post("/login", async (req, res) => {
     return res.status(200).json({ msg: "Login successful", user, token });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+userRouter.post("/cart/add", protectedRoute, async (req, res) => {
+  try {
+    const userId = req.userId;
+    const user = await User.findOne({ _id: userId });
+    const newCart = req.body;
+
+    // const res = await User.findOneAndUpdate(
+    //   { _id: userId },
+    //   {
+    //     cart: cart.push(...newCart),
+    //   }
+    // );
+    user.cart.push(...newCart);
+    await user.save();
+    return res.status(200).json({ msg: "Added successfully" });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
   }
 });
 

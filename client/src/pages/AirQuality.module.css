@@ -1,136 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-.container{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right,rgb(22, 86, 188),rgb(0, 18, 44));
-    position: relative;
-    right: 1.3vw;
-    bottom: 1vh;
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgb(22, 86, 188), rgb(0, 18, 44));
+  position: relative;
+  right: 1.3vw;
+  bottom: 1vh;
 }
-.content{
-    height: 80vh;
-    width: 55vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-   
+.content {
+  height: 80vh;
+  width: 55vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
 }
-.collage{
-height: 80vh;
-width: 40vw;
-background-image: url(./media/image/aqi_border.jpg);
-background-size: cover;
+.collage {
+  height: 80vh;
+  width: 40vw;
+  background-image: url(./media/image/aqi_border.jpg);
+  background-size: cover;
 }
-.def{
-    font-family: "Roboto";
-    font-size: 32px;
-    position: relative;
-    top: 0vh;
-    left: 8vw;
+.def {
+  font-family: "Roboto";
+  font-size: 28px;
+  position: relative;
+  top: 0vh;
+  left: 8vw;
 }
-.btn{
-    display: flex;
-    flex-direction: column;
-    position: relative;
- bottom: 30.5vh;
-    right: 20vw;
+.btn {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 30.5vh;
+  right: 20vw;
 }
-.btn1{
-    border-color: rgb(83, 142, 237);
-    margin-top: 30px;
-    border-radius: 25px;
-    height: 8vh;
-    width: 10vw;
-    font-size: larger;
-    font-family: "Roboto";
-    color: rgb(83, 142, 237);
-    font-weight: bolder;
+.btn1 {
+  border-color: rgb(83, 142, 237);
+  margin-top: 30px;
+  border-radius: 25px;
+  height: 8vh;
+  width: 10vw;
+  font-size: larger;
+  font-family: "Roboto";
+  color: rgb(83, 142, 237);
+  font-weight: bolder;
 }
-.btn2{
-    border-color: rgb(83, 142, 237);
-    margin-top: 30px;
-    border-radius: 25px;
-    height: 8vh;
-    width: 10vw;
-    font-size: larger;
-    font-family: "Roboto";
-    color: rgb(83, 142, 237);
-    font-weight: bolder;
+.btn2 {
+  border-color: rgb(83, 142, 237);
+  margin-top: 30px;
+  border-radius: 25px;
+  height: 8vh;
+  width: 10vw;
+  font-size: larger;
+  font-family: "Roboto";
+  color: rgb(83, 142, 237);
+  font-weight: bolder;
 }
-.disclaimer
-{
-    height: 20vh;
-    width: 20vw;
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    position: relative;
-    bottom: 4vh;
-    background-color:gray;
-    top: 0vh;
-    left: 2vw;
-    background-color: rgb(196, 185, 185);
-    border-radius: 25px;
+.disclaimer {
+  height: 20vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  position: relative;
+  bottom: 4vh;
+  background-color: gray;
+  top: 0vh;
+  left: 2vw;
+  background-color: rgb(196, 185, 185);
+  border-radius: 25px;
 }
 
-.box1{
-    height: 2vh;
-    width: 1.5vw;
-    background-color: red;
-    position: absolute;
-    top: 3.5vh;
-    left: 6vw;
-
+.box1 {
+  height: 2vh;
+  width: 1.5vw;
+  background-color: red;
+  position: absolute;
+  top: 3.5vh;
+  left: 6vw;
 }
-.box2{
-    height: 2vh;
-    width: 1.5vw;
-    background-color: rgb(255, 119, 0);
-    position: absolute;
-    top: 7vh;
-    left: 6vw;
-
+.box2 {
+  height: 2vh;
+  width: 1.5vw;
+  background-color: rgb(255, 119, 0);
+  position: absolute;
+  top: 7vh;
+  left: 6vw;
 }
-.box3{
-    height: 2vh;
-    width: 1.5vw;
-    background-color: yellow;
-    position: absolute;
-    top: 10.5vh;
-    left: 6vw;
-    
+.box3 {
+  height: 2vh;
+  width: 1.5vw;
+  background-color: yellow;
+  position: absolute;
+  top: 10.5vh;
+  left: 6vw;
 }
-.box4{
-    height: 2vh;
-    width: 1.5vw;
-    background-color: rgb(49, 209, 49);
-    position:absolute;
-    top: 14vh;
-    left: 6vw;
+.box4 {
+  height: 2vh;
+  width: 1.5vw;
+  background-color: rgb(49, 209, 49);
+  position: absolute;
+  top: 14vh;
+  left: 6vw;
 }
-.text{
-    position: relative;
-    left: 2vw;
-    bottom: 0.3vh;
-    font-family: "Roboto";
+.text {
+  position: relative;
+  left: 2vw;
+  bottom: 0.3vh;
+  font-family: "Roboto";
 }
-.heading{
-   font-size: 8vh;
-   font-family: "Bebas Neue";
-   position: relative;
-   bottom: 10vh;
-   left: 20vw;
-   color: white;
+.heading {
+  font-size: 8vh;
+  font-family: "Bebas Neue";
+  position: relative;
+  bottom: 10vh;
+  left: 20vw;
+  color: white;
 }
-.img{
-    height: 30vh;
-    width: 40vw;
-    position: relative;
-    bottom: 22vh;
-    left: 0vw;
+.img {
+  height: 30vh;
+  width: 40vw;
+  position: relative;
+  bottom: 10vh;
+  left: 0vw;
 }
