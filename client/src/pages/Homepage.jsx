@@ -147,7 +147,7 @@ function Homepage() {
                   </Link>
                 </h4>
                 <h4>
-                  <Link className={styles.link} to={"/donate"}>
+                  <Link className={styles.link} to={"/airQuality"}>
                     Air quality
                   </Link>
                 </h4>

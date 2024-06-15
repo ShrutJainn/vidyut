@@ -1,0 +1,223 @@
+
+.navbar {
+    width: 100%;
+    padding: 0.5;
+    background: linear-gradient(to right, rgb(22, 86, 188), rgb(0, 18, 44));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading1, .heading2 {
+    font-family: "Roboto";
+    color: white;
+    text-align: start;
+    margin: 0;
+}
+
+.heading1 {
+    font-size: 1.6rem;
+    position: relative;
+    right: 42vw;
+    top: 2vh;
+}
+
+.heading2 {
+    font-size: 1.6rem;
+    position: relative;
+    right: 30vw;
+    bottom: 3.3 vh;
+    
+}
+
+/* Container styling */
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+    min-height: 80vh;
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    max-width: 1000px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 24px 21px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Tree grid styling */
+.trees2 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(18vw, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Individual tree item styling */
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.treeImage {
+    /* border-radius: 10px; */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 100px;
+}
+
+.treeDetails {
+    text-align: center;
+}
+
+.treeName {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.treeDescription {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Button container styling */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Add to cart button styling */
+.addCartBtn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addCartBtn:hover {
+    background-color: #2980b9;
+}
+
+.cartIcon {
+    margin-left: 0.5rem;
+    width: 20px;
+    height: 20px;
+}
+
+/* Price button styling */
+.priceBtn {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border: none;
+    border-radius: 5px;
+    padding: 0rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.priceBtn:hover {
+    background-color: #bdc3c7;
+}
+
+/* Payment button styling */
+.paymentBtn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+    height: 8vh;
+    position: relative;
+    top: 3vh;
+}
+
+.paymentBtn:hover {
+    background-color: #219150;
+}
+
+/* Footer styling */
+.footer {
+    width: 100%;
+    padding: 1rem 0;
+    background: linear-gradient(to right, rgb(22, 86, 188), rgb(0, 18, 44));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    position: relative;
+    top: 4.5vh;
+}
+
+.footer p {
+    margin: 0;
+}
+.imgUser{
+    position: relative;
+    bottom: 148vh;
+    left: 96vw;
+    border-radius: 100%;
+    border-color: white ;
+    height: 25px;
+    width: 25px;
+}
+.imgUser1{
+    position: relative;
+    bottom: 148vh;
+    left: 90vw;
+    border-radius: 100%;
+  
+    height: 30px;
+    width: 25px;
+}
+.imgUser3{
+    position: relative;
+    bottom: 148vh;
+    left: 84vw;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+}
+.imgUser img{
+    border-radius: 100%;
+}
+.imgUser1 img{
+    border-radius: 100%;
+}
+.imgUser3 img{
+    border-radius: 100%;
+}
+

@@ -8,6 +8,8 @@ import Form from "./components/Form";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import userAtom from "./atoms/userAtom";
+import Donate from "./pages/Donate";
+import AirQuality from "./pages/AirQuality";
 function App() {
   const user = useRecoilValue(userAtom);
   return (
@@ -27,6 +29,8 @@ function App() {
               path="/signup"
               element={user ? <Navigate to={"/"} /> : <SignupPage />}
             />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/airQuality" element={<AirQuality />} />
           </Routes>
           <Toaster
             position="top-center"
