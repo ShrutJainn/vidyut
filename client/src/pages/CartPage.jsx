@@ -3,20 +3,54 @@ import styles from "./CartPage.module.css";
 import { useRecoilValue } from "recoil";
 import cartAtom from "../atoms/cartAtom";
 import toast from "react-hot-toast";
+import logo from "../pages/media/logo.png";
 import axios from "axios";
 function CartPage() {
+  const cart = useRecoilValue(cartAtom);
+  let amount = 0;
+  for (let i = 0; i < cart.length; i++) {
+    let cartItem = cart[i];
+    amount = amount + cartItem.price;
+  }
+
   async function handleSubmit() {
     try {
-      const { data } = await axios.post(
-        `${import.meta.env.VITE_APP_URL}/users/send-sms`
-      );
+      const {
+        data: { key },
+      } = await axios.get(`${import.meta.env.VITE_APP_URL}/getKey`);
+      const {
+        data: { order },
+      } = await axios.post(`${import.meta.env.VITE_APP_URL}/pay/checkout`, {
+        amount: amount,
+      });
+      const options = {
+        key: key, // Enter the Key ID generated from the Dashboard
+        amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        currency: "INR",
+        name: "Vidyut",
+        description: "Test Transaction",
+        image: logo,
+        order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        callback_url: `${import.meta.env.VITE_APP_URL}/pay/paymentVerification`,
+        prefill: {
+          name: "Gaurav Kumar",
+          email: "gaurav.kumar@example.com",
+          contact: "9000090000",
+        },
+        notes: {
+          address: "Razorpay Corporate Office",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
 
-      console.log(data);
+      const razor = window.Razorpay(options);
+      razor.open();
     } catch (error) {
       return toast.error(error.message);
     }
   }
-  const cart = useRecoilValue(cartAtom);
   return (
     <>
       <header>

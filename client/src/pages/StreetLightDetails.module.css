@@ -51,7 +51,8 @@ h1 {
 }
 
 #searchBtn {
-  padding: 0.7rem 1.5rem;
+  /* padding: 0.7rem 1.5rem; */
+  height: 2.5vw;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -117,7 +118,9 @@ button {
 .buyBtn,
 #faqBtn {
   border-radius: 25px;
-  padding: 0.7rem 1.5rem;
+  height: 2.5vw;
+  border: none;
+  /* padding: 0.7rem 1.5rem; */
 }
 
 .viewBtn {

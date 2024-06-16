@@ -1,0 +1,76 @@
+#page2 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+#page2Left {
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid black;
+}
+#page2Right {
+  height: 100%;
+  width: 50%;
+}
+#page2Left .content {
+  color: black;
+  margin-left: 4vw;
+  margin-top: 40vh;
+  width: 70%;
+}
+.content h1 {
+  font-size: 4rem;
+}
+.content p {
+  font-size: 1rem;
+}
+h4 {
+  padding: 12px 12px;
+  border: 1px solid #0000003c;
+  border-radius: 34px;
+  font-weight: 500;
+  color: #000000bb;
+  transition: all ease 0.4s;
+  position: relative;
+  font-size: 18px;
+  overflow: hidden;
+  width: 6vw;
+  margin-top: 1vw;
+}
+
+h4::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  left: 0;
+  bottom: -100%;
+  border-radius: 34px;
+  transition: all ease 0.4s;
+}
+
+h4:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+h4 .link {
+  color: #000000bb;
+  text-decoration: none;
+  position: relative;
+  z-index: 9;
+}
+
+h4:hover .link {
+  color: #fff;
+}
+.btns {
+  padding-top: 2vh;
+  margin-top: 2vh;
+}
+button {
+  border: 1px solid black;
+  height: 2rem;
+  width: 20vw;
+}

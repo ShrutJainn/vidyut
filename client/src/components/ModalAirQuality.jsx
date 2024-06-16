@@ -7,12 +7,9 @@ function ModalAirQuality({ setIsOpenModal, airData }) {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modal}>
-        <button
-          className={styles.closeButton}
-          onClick={() => setIsOpenModal(false)}
-        >
+        <p className={styles.closeButton} onClick={() => setIsOpenModal(false)}>
           X
-        </button>
+        </p>
         <div className={styles.details}>
           <h1 className={styles.heading}>AQI of your area : {aqi} ppm</h1>
           <div className={styles.inDetails}>

@@ -12,6 +12,7 @@ import Donate from "./pages/Donate";
 import AirQuality from "./pages/AirQuality";
 import CartPage from "./pages/CartPage";
 import StreetLightDetails from "./pages/StreetLightDetails";
+import Intensity from "./pages/Intensity";
 function App() {
   const user = useRecoilValue(userAtom);
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/airQuality" element={<AirQuality />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/street" element={<StreetLightDetails />} />
+            <Route path="/intensity" element={<Intensity />} />
           </Routes>
           <Toaster
             position="top-center"

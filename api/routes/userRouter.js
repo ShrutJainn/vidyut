@@ -5,6 +5,7 @@ import { User } from "../db.js";
 import zod from "zod";
 import { protectedRoute } from "../middlewares/protectedRoute.js";
 import twilio from "twilio";
+
 const userRouter = express.Router();
 
 const jwtSecret = process.env.JWT_SECRET;

@@ -88,7 +88,7 @@ function Donate() {
                       onClick={() => handleAddItem(tree)}
                       className={styles.addCartBtn}
                     >
-                      Add To Cart{" "}
+                      Add{" "}
                       <img
                         src={atc}
                         className={styles.cartIcon}

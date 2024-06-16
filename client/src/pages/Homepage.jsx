@@ -11,12 +11,14 @@ import sup1 from "./media/sup1.jpg";
 import sup2 from "./media/sup2.jpg";
 import sup3 from "./media/sup3.jpg";
 import sup4 from "./media/sup4.jpg";
+import { useRecoilValue } from "recoil";
+import userAtom from "../atoms/userAtom";
 
 function Homepage() {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = useRecoilValue(userAtom);
   console.log(user);
-
+  gsap.registerPlugin(useGSAP);
   useGSAP(() => {
     gsap.to(".loader", {
       top: "-100%",
@@ -75,7 +77,7 @@ function Homepage() {
         <div id={styles.page2}>
           <div id={styles.page2Left}>
             <div className={styles.content}>
-              <h1>Track your street</h1>
+              <h1 style={{ color: "black" }}>Track your street</h1>
               <hr />
               <p>
                 The street light tracking system utilizes advanced monitoring
@@ -154,10 +156,12 @@ function Homepage() {
         </div>
         <div id={styles.solution}>
           <div id={styles.solutionLeft}>
-            <h1>Our solutions for you</h1>
+            <h1 style={{ color: "black" }}>Our solutions for you</h1>
           </div>
           <div id={styles.solutionRight}>
-            <h1 style={{ fontSize: "2rem", marginBottom: "1vw" }}>
+            <h1
+              style={{ fontSize: "2rem", marginBottom: "1vw", color: "black" }}
+            >
               धर्मेण हीनाः पशवः समानाः।
               <br />
               Without righteousness and humanity, human beings are like animals.
@@ -172,7 +176,7 @@ function Homepage() {
 
         <div id={styles.page4}>
           <div id={styles.page4Top}>
-            <h1>Too cute, to Pollute </h1>
+            <h1 style={{ color: "black" }}>Too cute, to Pollute </h1>
           </div>
           <div id={styles.hallOfFame}>
             <div className={styles.box}>
@@ -194,7 +198,14 @@ function Homepage() {
               />
             </div>
           </div>
-          <h1 style={{ marginTop: "2vw", fontSize: "2rem", marginLeft: "1vw" }}>
+          <h1
+            style={{
+              marginTop: "2vw",
+              fontSize: "2rem",
+              marginLeft: "1vw",
+              color: "black",
+            }}
+          >
             माता भूमिः पुत्रोऽहं पृथिव्याः। <br />
             <span style={{ fontSize: "1.5rem" }}>
               Earth is my mother and I am her child.

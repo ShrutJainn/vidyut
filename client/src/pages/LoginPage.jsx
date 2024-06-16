@@ -9,10 +9,13 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import userAtom from "../atoms/userAtom";
 
 function LoginPage() {
   const { register, handleSubmit } = useForm();
   const [loading, setLoading] = useState(false);
+  const setUser = useSetRecoilState(userAtom);
   const navigate = useNavigate();
   async function onSubmit(inputData) {
     setLoading(true);
@@ -22,10 +25,11 @@ function LoginPage() {
         `${import.meta.env.VITE_APP_URL}/users/login`,
         inputData
       );
+      setUser(data.user);
       toast.success(data.msg);
       localStorage.setItem("user", JSON.stringify(data.user));
       localStorage.setItem("token", JSON.stringify(data.token));
-      navigate(-1);
+      navigate("/");
     } catch (error) {
       if (error.response.data.error)
         return toast.error(error.response.data.error);
